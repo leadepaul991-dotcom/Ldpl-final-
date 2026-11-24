@@ -34,7 +34,6 @@ h1, h2, h3, p, figure { margin-top: 0; }
 .home-hero { position: relative; height: min(690px, 76vw); min-height: 520px; max-height: 760px; overflow: hidden; background: var(--beige); color: var(--ivory); }
 .hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 55%; }
 .hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(33,25,23,.18), rgba(33,25,23,.04) 65%, transparent); }
-.hero-index { position: absolute; right: var(--gutter); bottom: 31px; font-size: 9px; letter-spacing: .18em; }
 
 .expertise-section { position: relative; padding: clamp(74px, 9vw, 125px) var(--gutter) clamp(86px, 10vw, 138px); background: var(--ivory); }
 .section-intro { text-align: center; margin: 0 auto 54px; }
@@ -81,7 +80,6 @@ h1, h2, h3, p, figure { margin-top: 0; }
 .about-image img, .contact-image img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; object-position: center; }
 .about-image img { object-position: center 48%; }
 .contact-image img { object-position: center 48%; }
-.about-image figcaption, .contact-image figcaption { position: absolute; right: 24px; bottom: 20px; color: white; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; text-shadow: 0 1px 10px #0008; }
 .contact-layout { grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr); }
 .contact-content { padding-top: 45px; padding-bottom: 58px; }
 .contact-content h1 { margin-bottom: 17px; }
@@ -133,7 +131,6 @@ h1, h2, h3, p, figure { margin-top: 0; }
   .home-hero { height: clamp(500px, 78svh, 690px); min-height: 0; }
   .hero-image { object-position: 61% center; }
   .hero-shade { background: linear-gradient(90deg, rgba(33,25,23,.47), rgba(33,25,23,.12) 90%); }
-  .hero-index { right: var(--gutter); bottom: 22px; }
   .expertise-section { padding: 64px var(--gutter) 88px; }
   .section-intro { margin-bottom: 30px; text-align: left; }
   .section-intro h2 { font-size: clamp(36px, 9.8vw, 43px); }
@@ -160,7 +157,6 @@ h1, h2, h3, p, figure { margin-top: 0; }
   .dark-link { margin-top: 8px; }
   .about-image, .contact-image { order: 2; width: 100%; min-height: 0; height: clamp(305px, 84vw, 410px); }
   .about-image img, .contact-image img { object-position: center 48%; }
-  .about-image figcaption, .contact-image figcaption { right: 18px; bottom: 16px; font-size: 8px; }
   .contact-content { padding-bottom: 32px; }
   .contact-intro { margin-bottom: 13px; }
   .contact-form { gap: 9px; }
