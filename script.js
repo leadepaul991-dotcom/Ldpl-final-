@@ -15,9 +15,23 @@
 
   openButton?.addEventListener('click', () => setMenu(true));
   closeButton?.addEventListener('click', () => setMenu(false));
+  menu?.addEventListener('click', (event) => {
+    if (event.target === menu) setMenu(false);
+  });
   menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && menu && !menu.hidden) setMenu(false);
+    if (event.key !== 'Tab' || !menu || menu.hidden) return;
+    const focusable = [...menu.querySelectorAll('a[href], button:not([disabled])')];
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
   });
 
   document.querySelectorAll('[data-year]').forEach((node) => {

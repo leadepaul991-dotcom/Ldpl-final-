@@ -15,7 +15,7 @@ Aucun service de réception n’est encore configuré. Le formulaire ne fait pas
 
 ## Images et affichage mobile
 
-Les chemins des photos existantes correspondent aux fichiers du dépôt. Le lien vers `accueil-hero-mobile.jpg` a été retiré : ce fichier n’existait pas, et aucun visuel mobile n’a été ajouté ou inventé. L’image réelle `accueil-hero.jpg` est utilisée sur toutes les largeurs, avec `object-fit: cover` et un cadrage CSS mobile dédié ; le fichier source n’est pas étiré. Les autres images restent inchangées.
+Les chemins des photos existantes correspondent aux fichiers du dépôt. Le lien vers `accueil-hero-mobile.jpg` a été retiré : ce fichier n’existait pas, et aucun visuel mobile n’a été ajouté ou inventé. L’image réelle `accueil-hero.jpg` est utilisée sur toutes les largeurs. Les images des expertises sont contenues dans leur cadre sans agrandissement artificiel ; les photos originales de la page À propos et de Contact sont conservées.
 
 ## GitHub Pages
 
