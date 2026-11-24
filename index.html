@@ -1,88 +1,49 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="LDPL — Design d’espace, architecture intérieure, merchandising, scénographie et aménagement extérieur.">
-<title>LDPL — Design d’espace</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3eee8">
+  <meta name="description" content="LDPL — Architecture intérieure, design d’espace, merchandising, scénographie et aménagement extérieur.">
+  <title>LDPL — Architecture intérieure & design d’espace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-<a class="wordmark" href="index.html">LDPL</a>
-<nav class="main-nav">
-<a href="index.html" class="active">Accueil</a>
-<a href="a-propos.html">À propos</a>
-<a href="contact.html">Contact</a>
-</nav>
-<button class="menu-toggle" aria-label="Ouvrir le menu">
-<span></span><span></span><span></span>
-</button>
-</header>
-
-<main>
-<section class="home-hero" id="accueil" aria-label="Concevoir des lieux et des expériences">
-<div class="hero-copy">
-<h1>Concevoir des lieux<br><em>et des expériences.</em></h1>
-</div>
-</section>
-
-<section class="disciplines">
-<article class="discipline">
-<img src="architecture-interieur.jpg" alt="Architecture intérieure">
-<h2>Architecture<br>d’intérieur</h2>
-<p>Conception, réorganisation<br>et mise en valeur des espaces.</p>
-<span class="short-rule"></span>
-</article>
-
-<article class="discipline">
-<img src="merchandising.jpg" alt="Merchandising">
-<h2>Merchandising</h2>
-<p>Optimisation commerciale,<br>parcours client et mise en scène<br>de produits.</p>
-<span class="short-rule"></span>
-</article>
-
-<article class="discipline">
-<img src="scenographie.jpg" alt="Scénographie">
-<h2>Scénographie</h2>
-<p>Création d’univers, installation<br>et mise en espace d’événements<br>ou de lieux culturels.</p>
-<span class="short-rule"></span>
-</article>
-
-<article class="discipline">
-<img src="amenagement-exterieur.jpg" alt="Aménagement extérieur">
-<h2>Aménagement<br>extérieur</h2>
-<p>Conception d’espaces paysagers<br>et valorisation des abords.</p>
-<span class="short-rule"></span>
-</article>
-</section>
-
-<footer class="site-footer">
-<a class="footer-wordmark" href="#accueil">LDPL</a>
-<span class="footer-divider"></span>
-</footer>
-</main>
-
-<div class="menu-overlay" id="menu-overlay">
-<button class="menu-close" aria-label="Fermer le menu">
-<span></span><span></span>
-</button>
-<a class="menu-wordmark" href="index.html">LDPL</a>
-<nav class="overlay-nav">
-<a href="index.html">Accueil</a>
-<a href="a-propos.html">À propos</a>
-<a href="contact.html">Contact</a>
-</nav>
-<div class="menu-shadow"></div>
-</div>
-
-<script src="script.js"></script>
+  <header class="site-header">
+    <a class="wordmark" href="index.html" aria-label="LDPL, accueil">LDPL<span>.</span></a>
+    <nav class="desktop-nav" aria-label="Navigation principale">
+      <a href="index.html" aria-current="page">Accueil</a><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button>
+  </header>
+  <div class="menu-overlay" id="site-menu" hidden>
+    <button class="menu-close" type="button" aria-label="Fermer le menu"><span></span><span></span></button>
+    <a class="menu-brand" href="index.html">LDPL<span>.</span></a>
+    <nav class="overlay-nav" aria-label="Menu principal"><a href="index.html" aria-current="page">Accueil</a><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a></nav>
+    <p class="menu-note">Architecture intérieure · Design d’espace</p>
+  </div>
+  <main>
+    <section class="home-hero" aria-labelledby="hero-title">
+      <picture class="hero-picture"><source media="(max-width: 600px)" srcset="accueil-hero-mobile.jpg"><img class="hero-image" src="accueil-hero.jpg" alt="Intérieur contemporain aux tons chauds et matières naturelles" fetchpriority="high"></picture>
+      <div class="hero-shade"></div>
+      <div class="hero-copy"><p class="eyebrow light">LDPL — DESIGN D’ESPACE</p><h1 id="hero-title">Concevoir des lieux<br>et des expériences.</h1><a class="text-link light-link" href="a-propos.html">Découvrir mon approche <span aria-hidden="true">↗</span></a></div>
+      <span class="hero-index">01 — 03</span>
+    </section>
+    <section class="expertise-section" aria-labelledby="expertise-title">
+      <div class="section-intro"><p class="eyebrow">UN SAVOIR-FAIRE PLURIEL</p><h2 id="expertise-title">Des espaces pensés<br><em>dans leur ensemble.</em></h2></div>
+      <div class="expertise-grid">
+        <article class="expertise-card"><img src="architecture-interieur.jpg" alt="Espace intérieur aux matières naturelles" loading="lazy"><div class="card-copy"><span class="card-number">01</span><h3>Architecture<br>d’intérieur</h3><p>Conception, réorganisation et mise en valeur des espaces.</p></div></article>
+        <article class="expertise-card"><img src="merchandising.jpg" alt="Mise en scène soignée d’un espace commercial" loading="lazy"><div class="card-copy"><span class="card-number">02</span><h3>Merchandising</h3><p>Optimisation commerciale, parcours client et mise en scène de produits.</p></div></article>
+        <article class="expertise-card"><img src="scenographie.jpg" alt="Composition scénographique dans un lieu culturel" loading="lazy"><div class="card-copy"><span class="card-number">03</span><h3>Scénographie</h3><p>Création d’univers, installation et mise en espace d’événements ou de lieux culturels.</p></div></article>
+        <article class="expertise-card"><img src="amenagement-exterieur.jpg" alt="Aménagement paysager aux lignes sobres" loading="lazy"><div class="card-copy"><span class="card-number">04</span><h3>Aménagement<br>extérieur</h3><p>Conception d’espaces paysagers et valorisation des abords.</p></div></article>
+      </div>
+      <a class="round-link" href="contact.html" aria-label="Parlons de votre projet">Parlons<br>de votre projet <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="footer-mark" href="index.html">LDPL<span>.</span></a><p>Architecture intérieure & design d’espace</p><a class="footer-contact" href="contact.html">Un projet ? Écrivons-nous <span aria-hidden="true">↗</span></a><small>© <span data-year></span> LDPL</small></footer>
 </body>
 </html>
-
-

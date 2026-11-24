@@ -1,1 +1,36 @@
-const menuButton=document.querySelector(".menu-toggle");const menuPanel=document.querySelector(".menu-overlay");const closeButton=document.querySelector(".menu-close");const menuLinks=document.querySelectorAll(".overlay-nav a");function openMenu(){menuPanel.classList.add("open");menuPanel.setAttribute("aria-hidden","false");menuButton.setAttribute("aria-expanded","true");document.body.classList.add("menu-open")}function closeMenu(){menuPanel.classList.remove("open");menuPanel.setAttribute("aria-hidden","true");menuButton.setAttribute("aria-expanded","false");document.body.classList.remove("menu-open")}menuButton.addEventListener("click",openMenu);closeButton.addEventListener("click",closeMenu);menuLinks.forEach(link=>link.addEventListener("click",closeMenu));document.addEventListener("keydown",event=>{if(event.key==="Escape")closeMenu()});document.querySelector("#contact-form").addEventListener("submit",event=>{event.preventDefault();document.querySelector("#form-note").textContent="Merci pour votre message. Le formulaire doit être relié à un service d’envoi pour transmettre votre demande."});
+(() => {
+  const menu = document.querySelector('.menu-overlay');
+  const openButton = document.querySelector('.menu-toggle');
+  const closeButton = document.querySelector('.menu-close');
+
+  function setMenu(open) {
+    if (!menu || !openButton) return;
+    menu.hidden = !open;
+    document.body.classList.toggle('menu-open', open);
+    openButton.setAttribute('aria-expanded', String(open));
+    openButton.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    if (open) closeButton?.focus();
+    else openButton.focus();
+  }
+
+  openButton?.addEventListener('click', () => setMenu(true));
+  closeButton?.addEventListener('click', () => setMenu(false));
+  menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menu && !menu.hidden) setMenu(false);
+  });
+
+  document.querySelectorAll('[data-year]').forEach((node) => {
+    node.textContent = new Date().getFullYear();
+  });
+
+  const form = document.querySelector('[data-contact-form]');
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    const notice = form.querySelector('[role="status"]');
+    if (notice) {
+      notice.textContent = 'Merci, vos champs sont renseignés. Le formulaire ne peut pas transmettre votre demande : LDPL doit d’abord connecter un service de réception sécurisé.';
+    }
+  });
+})();
