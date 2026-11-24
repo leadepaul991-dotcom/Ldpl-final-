@@ -25,12 +25,36 @@
   });
 
   const form = document.querySelector('[data-contact-form]');
-  form?.addEventListener('submit', (event) => {
+  form?.addEventListener('submit', async (event) => {
     event.preventDefault();
     if (!form.reportValidity()) return;
-    const notice = form.querySelector('[role="status"]');
-    if (notice) {
-      notice.textContent = 'Merci, vos champs sont renseignés. Le formulaire ne peut pas transmettre votre demande : LDPL doit d’abord connecter un service de réception sécurisé.';
+
+    const status = form.querySelector('[role="status"]');
+    const endpoint = form.dataset.endpoint?.trim();
+    if (!endpoint) {
+      status.hidden = false;
+      status.textContent = 'Le formulaire n’est pas configuré pour recevoir les messages. Votre demande n’a pas été envoyée.';
+      return;
+    }
+
+    const submitButton = form.querySelector('[type="submit"]');
+    submitButton.disabled = true;
+    status.hidden = false;
+    status.textContent = 'Envoi en cours…';
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+      if (!response.ok) throw new Error(`Le service a répondu avec le statut ${response.status}.`);
+      form.reset();
+      status.textContent = 'Merci, votre message a bien été transmis.';
+    } catch (error) {
+      status.textContent = 'L’envoi n’a pas abouti. Votre message n’a pas été transmis ; veuillez réessayer ultérieurement.';
+    } finally {
+      submitButton.disabled = false;
     }
   });
 })();

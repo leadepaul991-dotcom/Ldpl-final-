@@ -11,24 +11,24 @@
   <link rel="stylesheet" href="style.css"><script src="script.js" defer></script>
 </head>
 <body>
-  <header class="site-header"><a class="wordmark" href="index.html" aria-label="LDPL, accueil">LDPL<span>.</span></a><nav class="desktop-nav" aria-label="Navigation principale"><a href="index.html">Accueil</a><a href="a-propos.html">À propos</a><a href="contact.html" aria-current="page">Contact</a></nav><button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button></header>
-  <div class="menu-overlay" id="site-menu" hidden><button class="menu-close" type="button" aria-label="Fermer le menu"><span></span><span></span></button><a class="menu-brand" href="index.html">LDPL<span>.</span></a><nav class="overlay-nav" aria-label="Menu principal"><a href="index.html">Accueil</a><a href="a-propos.html">À propos</a><a href="contact.html" aria-current="page">Contact</a></nav><p class="menu-note">Architecture intérieure · Design d’espace</p></div>
+  <header class="site-header"><a class="wordmark" href="index.html" aria-label="LDPL, accueil">LDPL<span>.</span></a><nav class="desktop-nav" aria-label="Navigation principale"><a href="index.html">Accueil</a><a href="a-propos.html">À propos</a><a href="index.html#expertises">Expertises</a><a href="contact.html" aria-current="page">Contact</a></nav><button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button></header>
+  <div class="menu-overlay" id="site-menu" hidden><button class="menu-close" type="button" aria-label="Fermer le menu"><span></span><span></span></button><a class="menu-brand" href="index.html">LDPL<span>.</span></a><nav class="overlay-nav" aria-label="Menu principal"><a href="index.html">Accueil</a><a href="a-propos.html">À propos</a><a href="index.html#expertises">Expertises</a><a href="contact.html" aria-current="page">Contact</a></nav><p class="menu-note">Architecture intérieure · Design d’espace</p></div>
   <main class="contact-page">
     <section class="contact-layout" aria-labelledby="contact-title">
       <div class="contact-content"><p class="eyebrow">VOTRE PROJET, PREMIÈRE ÉTAPE</p><h1 id="contact-title">Discutons de<br><em>votre projet.</em></h1><p class="contact-intro">Une question, une idée ou un projet ? Je vous invite à me contacter via le formulaire ci-dessous. Je reviendrai vers vous dans les plus brefs délais.</p>
-        <form class="contact-form" data-contact-form>
+        <form class="contact-form" data-contact-form data-endpoint="" method="post">
           <div class="form-row"><label>Nom<input name="nom" autocomplete="family-name" required></label><label>Prénom<input name="prenom" autocomplete="given-name" required></label></div>
           <label>E-mail<input type="email" name="email" autocomplete="email" required></label>
           <label>Type de projet<select name="type-projet" required><option value="" selected disabled>Sélectionner une expertise</option><option>Architecture d’intérieur</option><option>Merchandising</option><option>Scénographie</option><option>Aménagement extérieur</option><option>Autre demande</option></select></label>
           <label>Votre message<textarea name="message" rows="4" required></textarea></label>
           <button class="submit-button" type="submit">Envoyer <span aria-hidden="true">↗</span></button>
-          <p class="form-note" role="status" aria-live="polite">Le formulaire est prêt, mais aucun service de réception n’est encore configuré. Votre message ne sera pas envoyé tant qu’une URL de traitement n’aura pas été ajoutée.</p>
+          <p class="form-status" role="status" aria-live="polite" hidden></p>
         </form>
       </div>
       <figure class="contact-image"><img src="contact.jpg" alt="Intérieur chaleureux aux textures minérales, éclairé par la lumière naturelle" fetchpriority="high"><figcaption>Imaginons la suite ensemble.</figcaption></figure>
-      <span class="page-index">03 / 03</span>
+      <span class="page-index" aria-hidden="true">03 / 03</span>
     </section>
   </main>
-  <footer class="site-footer"><a class="footer-mark" href="index.html">LDPL<span>.</span></a><p>Architecture intérieure & design d’espace</p><a class="footer-contact" href="index.html">Retour à l’accueil <span aria-hidden="true">↗</span></a><small>© <span data-year></span> LDPL</small></footer>
+  <footer class="site-footer"><a class="footer-mark" href="index.html">LDPL<span>.</span></a><p>Architecture intérieure & design d’espace</p><nav class="footer-nav" aria-label="Liens de pied de page"><a href="index.html#expertises">Expertises</a><a href="contact.html" aria-current="page">Contact <span aria-hidden="true">↗</span></a></nav><small>© <span data-year></span> LDPL</small></footer>
 </body>
 </html>
